@@ -41,8 +41,7 @@ function init() {
     }
   }
   scene.add(robots);
-  const robot = makeMetalRobot();
-  scene.add(robot);
+
   // 光源の設定
   const light = new THREE.SpotLight(0xffffff,1800);
   light.position.set(0, 30, 30);
@@ -73,7 +72,6 @@ function init() {
       =(robot.rotation.y + 0.01) % (2 * Math.PI);
       robot.position.y = Math.sin(robot.rotation.y);
     });
-    robot.rotation.y += 0.01;
     renderer.render(scene, camera);
     requestAnimationFrame(render);
   }
